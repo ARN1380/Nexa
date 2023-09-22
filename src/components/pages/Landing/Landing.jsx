@@ -19,16 +19,16 @@ export default function Landing() {
   return (
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
-        <img
-          className="absolute -top-[420px] -left-[30%] opacity-40"
-          src={darkCircle}
-          alt=""
-        />
-        <img
-          className="hidden md:block absolute top-[270px] left-[52%] "
-          src={brightCircle}
-          alt=""
-        />
+        <div className="md:w-[1145px] md:h-[1145px] w-[800px] h-[800px] absolute md:-top-[420px] md:-left-[30%] top-[200px] -right-[280px] ">
+          <img className="md:opacity-40 opacity-60" src={darkCircle} alt="" />
+        </div>
+        <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[270px] md:left-[52%] top-[1300px] -right-[200px]">
+          <img
+            className="opacity-80 md:opacity-100" 
+            src={brightCircle}
+            alt=""
+          />
+        </div>
 
         <Header />
         <Content />
@@ -99,7 +99,7 @@ function Content() {
       </div>
 
       {/* crypto portfolio section */}
-      <div className="mt-44 flex flex-col items-center max-w-container px-4 md:px-0">
+      <div className="mt-44 flex flex-col items-center max-w-container px-4 md:px-0 z-10">
         <div className="flex flex-col md:items-center">
           <h1 className="font-bold text-[1.75em] md:font-extrabold md:text-[42px] max-w-[273px] md:max-w-none">
             Build your crypto portfolio
