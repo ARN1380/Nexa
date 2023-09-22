@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/src/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf");
+}
+@font-face {
+  font-family: "Kenia";
+  src: url("/src/assets/fonts/Kenia/Kenia-Regular.ttf");
+}
+
+@layer components {
+  .small-card {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  }
+}
