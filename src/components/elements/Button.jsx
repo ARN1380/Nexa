@@ -4,7 +4,8 @@ export default function Button(props) {
   return (
     <div
       className={`uppercase cursor-pointer flex justify-center items-center px-8 text-sm font-bold rounded-full tracking-widest transition duration-150 ease-out 
-      ${height ? height : "h-16"} 
+      ${height ? height : "h-16"}
+      ${width ? width : ""}
       ${
         type === "white"
           ? "bg-white text-blue hover:bg-hover-blue hover:text-white"

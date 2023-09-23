@@ -14,6 +14,14 @@ import crypto2 from "../../../assets/images/portfolio/crypto2.svg";
 import crypto3 from "../../../assets/images/portfolio/crypto3.svg";
 import crypto4 from "../../../assets/images/portfolio/crypto4.svg";
 import iphone from "../../../assets/images/portfolio/iphones.svg";
+import iphones from "../../../assets/images/iphones.svg";
+import earn1 from "../../../assets/images/earndaily/earn1.svg";
+import earn2 from "../../../assets/images/earndaily/earn2.svg";
+import earn3 from "../../../assets/images/earndaily/earn3.svg";
+import earn4 from "../../../assets/images/earndaily/earn4.svg";
+import earn5 from "../../../assets/images/earndaily/earn5.svg";
+import earn6 from "../../../assets/images/earndaily/earn6.svg";
+import exploreIphone from "../../../assets/images/exploreIphone.svg";
 
 export default function Landing() {
   return (
@@ -24,7 +32,7 @@ export default function Landing() {
         </div>
         <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[270px] md:left-[52%] top-[1300px] -right-[200px]">
           <img
-            className="opacity-80 md:opacity-100" 
+            className="opacity-80 md:opacity-100"
             src={brightCircle}
             alt=""
           />
@@ -42,7 +50,7 @@ function Content() {
   return (
     <div className="flex flex-col items-center ">
       {/* hero section */}
-      <div className="flex relative overflow-hidden ">
+      <div className="flex relative overflow-x-hiddenn ">
         <div className="flex justify-center w-screen px-4">
           <div className="max-w-container w-full pt-20 flex flex-col md:flex-row items-center md:h-[660px] ">
             <div className="max-w-[738px] z-20">
@@ -154,6 +162,104 @@ function Content() {
         </div>
         <div className="md:mt-12 mt-10">
           <Button>download app</Button>
+        </div>
+      </div>
+
+      {/* Earn daily iphone */}
+      <div className="px-4 mt-20 w-full flex flex-col max-w-container space-y-10 md:flex-row md:space-x-[167px] md:justify-center md:items-center">
+        <div className="self-center">
+          <img className="" src={iphones} alt="iphones" />
+        </div>
+        <div className="flex flex-col space-y-4 pr-11 md:max-w-[475px] ">
+          <h3 className="capitalize font-bold text-[28px] leading-9 md:text-[42px] md:leading-[55px] ">
+            Earn daily rewards on your idle tokens
+          </h3>
+          <p className="leading-7">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+            nulla suspendisse tortor aene.
+          </p>
+          <div className="flex flex-col space-y-[17px] md:pt-4 ">
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn1} alt="earndaily icon" />
+              </div>
+              <p>Lowest fees in market</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn2} alt="earndaily icon" />
+              </div>
+              <p>Fast and secure transactions</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn3} alt="earndaily icon" />
+              </div>
+              <p>256-bit secure encryption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Earn daily mac */}
+      <div className="flex flex-col space-y-10  md:flex-row mt-20 md:mt-[100px] px-4 md:px-0 justify-start max-w-container w- items-center md:h-[600px]">
+        <div className="flex flex-col space-y-4 md:max-w-[475px] md:ml-10 ">
+          <h3 className="capitalize font-bold text-[28px] leading-9 md:text-[42px] md:leading-[55px]">
+            Earn daily rewards on your idle tokens
+          </h3>
+          <p className="leading-7">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+            nulla suspendisse tortor aene.
+          </p>
+          <div className="flex flex-col space-y-[17px] md:pt-4">
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn4} alt="earndaily icon" />
+              </div>
+              <p>Lowest fees in market</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn5} alt="earndaily icon" />
+              </div>
+              <p>Fast and secure transactions</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn6} alt="earndaily icon" />
+              </div>
+              <p>256-bit secure encryption</p>
+            </div>
+          </div>
+        </div>
+        <div className=" md:translate-x-[200px]">
+          <img className="w-full md:scale-[140%]" src={macSvg} alt="mac book" />
+        </div>
+      </div>
+
+      {/* explore endless */}
+      <div className="w-full mt-24">
+        <div className="bg-blue flex justify-center">
+          <div className="md:max-h-[513px] max-h-[539px] max-w-container flex flex-col md:flex-row px-4 justify-between overflow-hidden md:overflow-visible md:items-center">
+            <div className="mt-10 md:mt-0 flex flex-col space-y-4 items-center md:items-start md:w-1/2">
+              <h3 className="font-bold text-[28px] md:text-[42px] max-w-[305px] md:max-w-none md:text-left text-center">
+                Explore endless possibilities with FinanceFlow
+              </h3>
+              <p className="text-center max-w-[330px] md:max-w-none md:text-left md:pb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+                nulla suspendisse tortor aene.
+              </p>
+              <Button type="white" width="w-full md:w-auto">
+                download app
+              </Button>
+            </div>
+            <div className="flex flex-col items-center md:w-1/2">
+              <img
+                className="w-[90%] md:w-auto md:h-[150%] -mt-8 md:-mt-20"
+                src={exploreIphone}
+                alt="two iphone"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
