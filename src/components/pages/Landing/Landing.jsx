@@ -22,22 +22,83 @@ import earn4 from "../../../assets/images/earndaily/earn4.svg";
 import earn5 from "../../../assets/images/earndaily/earn5.svg";
 import earn6 from "../../../assets/images/earndaily/earn6.svg";
 import exploreIphone from "../../../assets/images/exploreIphone.svg";
+import character from "../../../assets/images/character.png";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+const cardData = [
+  {
+    id: "1",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "2",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "3",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "4",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "5",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "6",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "7",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  {
+    id: "8",
+    img: { character },
+    name: "john carter",
+    role: "role",
+    company: "company",
+    desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
+  },
+  
+];
 
 export default function Landing() {
   return (
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
-        <div className="md:w-[1145px] md:h-[1145px] w-[800px] h-[800px] absolute md:-top-[420px] md:-left-[30%] top-[200px] -right-[280px] ">
-          <img className="md:opacity-40 opacity-60" src={darkCircle} alt="" />
-        </div>
-        <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[270px] md:left-[52%] top-[1300px] -right-[200px]">
-          <img
-            className="opacity-80 md:opacity-100"
-            src={brightCircle}
-            alt=""
-          />
-        </div>
-
+        <BgCircle />
         <Header />
         <Content />
         <Footer />
@@ -78,7 +139,6 @@ function Content() {
           </div>
         </div>
       </div>
-
       {/* company section */}
       <div className="mt-20 md:mt-[170px] flex flex-col items-center max-w-container w-full">
         <p className="text-lg font-light">Finance flow has been featured on</p>
@@ -105,7 +165,6 @@ function Content() {
           </div>
         </div>
       </div>
-
       {/* crypto portfolio section */}
       <div className="mt-44 flex flex-col items-center max-w-container px-4 md:px-0 z-10">
         <div className="flex flex-col md:items-center">
@@ -164,7 +223,6 @@ function Content() {
           <Button>download app</Button>
         </div>
       </div>
-
       {/* Earn daily iphone */}
       <div className="px-4 mt-20 w-full flex flex-col max-w-container space-y-10 md:flex-row md:space-x-[167px] md:justify-center md:items-center">
         <div className="self-center">
@@ -235,7 +293,6 @@ function Content() {
           <img className="w-full md:scale-[140%]" src={macSvg} alt="mac book" />
         </div>
       </div>
-
       {/* explore endless */}
       <div className="w-full mt-24">
         <div className="bg-blue flex justify-center">
@@ -262,6 +319,21 @@ function Content() {
           </div>
         </div>
       </div>
+
+      {/* comments crousel */}
+      <div className="w-full mt-48 flex flex-col items-center">
+        <div className="w-full max-w-container flex flex-col md:flex-row justify-between">
+          <p className="text-[42px] font-bold">What our users say?</p>
+          <Button>download app</Button>
+        </div>
+
+        <div className="mt-[33px]">
+          {/* carousel items */}
+          <MyCarousel cards={cardData} />
+          {/* carousel indicator */}
+          <div className=""></div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -277,3 +349,117 @@ function SmallCard({ svg, title, desc }) {
     </div>
   );
 }
+
+function Card({
+  id,
+  img,
+  name,
+  role,
+  company,
+  desc,
+  setActiveCard,
+  activeCard,
+  
+}) {
+  const ref = useRef();
+  const animationControl = useAnimation();
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      animationControl.start(activeCard === id ? { opacity: 1 } : { opacity: 0.2 });
+    }
+  }, [isInView,activeCard]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0.2 }}
+      animate={animationControl}
+      transition={{ duration: 1 }}
+      onClick={() => setActiveCard(id)}
+      ref={ref}
+    >
+      <div
+        className={`px-[50px] py-[65px] rounded-[40px] flex flex-col space-y-6 bg-dark-blue cursor-grab w-[370px] md:w-[576px]`}
+      >
+        <p>{desc}</p>
+        <div className="flex space-x-[22px] items-center">
+          <img
+            className="rounded-full w-[58px] h-[58px]"
+            src={img.character}
+            alt=""
+          />
+          <div className="uppercase">
+            <h3 className="font-semibold">{name}</h3>
+            <p>
+              {role}, {company}
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function MyCarousel({cards}) {
+  const [activeCard, setActiveCard] = useState(Math.ceil( cards.length/2-1).toString());
+  const [scrollWidth, setScrollWidth] = useState();
+  // const [cardWidth, setCardWidth] = useState();
+  const ref = useRef();
+  useEffect(()=>{
+    if (ref) {      
+      setScrollWidth( ref.current.offsetWidth / 2);      
+      // console.log(ref.current.offsetWidth/2-26);
+      // setCardWidth(ref.current.offsetWidth/2-26)
+    }
+  },[ref])
+  return (
+    <div className="w-full h-96 md:h-80 relative">
+
+    <motion.div
+      drag="x"      
+      dragConstraints={{ right: scrollWidth-1200, left: -scrollWidth}}
+      
+      className="flex  space-x-[26px]  absolute top-0 -left-[1800px] "
+      ref={ref}
+    >
+      {cards.map((card) => {
+        return (
+          <Card
+            key={card.id}
+            id={card.id}
+            img={card.img}
+            name={card.name}
+            role={card.role}
+            company={card.company}
+            desc={card.desc}
+            setActiveCard={setActiveCard}
+            activeCard={activeCard}
+            // cardWidth={cardWidth}
+          />
+        );
+      })}
+    </motion.div>
+    </div>
+
+  );
+}
+
+function BgCircle() {
+  return (
+    <>
+      <div className="md:w-[1145px] md:h-[1145px] w-[800px] h-[800px] absolute md:-top-[420px] md:-left-[30%] top-[200px] -right-[280px] ">
+        <img className="md:opacity-40 opacity-60" src={darkCircle} alt="" />
+      </div>
+      <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[270px] md:left-[52%] top-[1300px] -right-[200px]">
+        <img className="opacity-80 md:opacity-100" src={brightCircle} alt="" />
+      </div>
+    </>
+  );
+}
+
+// card --> isActive: false
+// card --> isActive: false --> isActive: true --> isActive: false
+// card --> isActive: false ---------------------> isActive: true
+// card --> isActive: false
+// card --> isActive: false
