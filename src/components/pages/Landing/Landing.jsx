@@ -26,7 +26,6 @@ import character from "../../../assets/images/character.png";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import Scrollbars from "react-custom-scrollbars-2";
 
 const cardData = [
   {
@@ -97,7 +96,7 @@ const cardData = [
 
 export default function Landing() {
   return (
-    <Scrollbars>
+    
       
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
@@ -107,7 +106,7 @@ export default function Landing() {
         <Footer />
       </div>
     </div>
-    </Scrollbars>
+    
   );
 }
 
