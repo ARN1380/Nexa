@@ -2,8 +2,11 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Landing from "./components/pages/Landing/Landing"
 import Dashboard from './components/pages/user/Dashboard';
 
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
+    
     <Route path="/" element={<Landing />}>
       <Route path="dashboard" element={<Dashboard />} />
     </Route>
@@ -12,6 +15,7 @@ const router = createBrowserRouter(
 
 function App() {
   return (
+    
     <RouterProvider router={router}></RouterProvider>
   )
 }

@@ -26,6 +26,8 @@ import character from "../../../assets/images/character.png";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import Scrollbars from "react-custom-scrollbars-2";
+
 const cardData = [
   {
     id: "1",
@@ -91,11 +93,12 @@ const cardData = [
     company: "company",
     desc: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. In commodo dolor fermentum dignissim et pellentesque egestas mauris, faucibus. Tellus nisi amet non at phasellus faucibus senectus in”",
   },
-  
 ];
 
 export default function Landing() {
   return (
+    <Scrollbars>
+      
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
         <BgCircle />
@@ -104,6 +107,7 @@ export default function Landing() {
         <Footer />
       </div>
     </div>
+    </Scrollbars>
   );
 }
 
@@ -330,8 +334,40 @@ function Content() {
         <div className="mt-[33px]">
           {/* carousel items */}
           <MyCarousel cards={cardData} />
-          {/* carousel indicator */}
-          <div className=""></div>
+        </div>
+      </div>
+
+      {/* video section */}
+      <div className="mt-40 flex flex-col md:flex-row max-w-container w-full">
+        <div>
+          <h4 className="text-[28px] font-bold">Get started today</h4>
+          <p className="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.</p>
+          <div className="flex flex-col space-y-[17px] md:pt-10">
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn4} alt="earndaily icon" />
+              </div>
+              <p>Lowest fees in market</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn5} alt="earndaily icon" />
+              </div>
+              <p>Fast and secure transactions</p>
+            </div>
+            <div className="flex space-x-[17px] items-center">
+              <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
+                <img src={earn6} alt="earndaily icon" />
+              </div>
+              <p>256-bit secure encryption</p>
+            </div>            
+          </div>
+        </div>
+        <div className="max-w-[60%] w-full">
+          <div className="bg-dark-blue w-full h-full rounded-[40px] flex justify-center items-center ">
+          {/* <video src="" className="w-full "></video> */}
+            <Button type='play'></Button>
+          </div>
         </div>
       </div>
     </div>
@@ -359,7 +395,6 @@ function Card({
   desc,
   setActiveCard,
   activeCard,
-  
 }) {
   const ref = useRef();
   const animationControl = useAnimation();
@@ -367,9 +402,11 @@ function Card({
 
   useEffect(() => {
     if (isInView) {
-      animationControl.start(activeCard === id ? { opacity: 1 } : { opacity: 0.2 });
+      animationControl.start(
+        activeCard === id ? { opacity: 1 } : { opacity: 0.2 }
+      );
     }
-  }, [isInView,activeCard]);
+  }, [isInView, activeCard]);
 
   return (
     <motion.div
@@ -401,47 +438,43 @@ function Card({
   );
 }
 
-function MyCarousel({cards}) {
-  const [activeCard, setActiveCard] = useState(Math.ceil( cards.length/2-1).toString());
+function MyCarousel({ cards }) {
+  const [activeCard, setActiveCard] = useState(
+    Math.ceil(cards.length / 2 - 1).toString()
+  );
   const [scrollWidth, setScrollWidth] = useState();
-  // const [cardWidth, setCardWidth] = useState();
+
   const ref = useRef();
-  useEffect(()=>{
-    if (ref) {      
-      setScrollWidth( ref.current.offsetWidth / 2);      
-      // console.log(ref.current.offsetWidth/2-26);
-      // setCardWidth(ref.current.offsetWidth/2-26)
+  useEffect(() => {
+    if (ref) {
+      setScrollWidth(ref.current.offsetWidth / 2);
     }
-  },[ref])
+  }, [ref]);
   return (
     <div className="w-full h-96 md:h-80 relative">
-
-    <motion.div
-      drag="x"      
-      dragConstraints={{ right: scrollWidth-1200, left: -scrollWidth}}
-      
-      className="flex  space-x-[26px]  absolute top-0 -left-[1800px] "
-      ref={ref}
-    >
-      {cards.map((card) => {
-        return (
-          <Card
-            key={card.id}
-            id={card.id}
-            img={card.img}
-            name={card.name}
-            role={card.role}
-            company={card.company}
-            desc={card.desc}
-            setActiveCard={setActiveCard}
-            activeCard={activeCard}
-            // cardWidth={cardWidth}
-          />
-        );
-      })}
-    </motion.div>
+      <motion.div
+        drag="x"
+        dragConstraints={{ right: scrollWidth, left: -scrollWidth }}
+        className="flex  space-x-[26px]  absolute top-0 -left-[1800px] "
+        ref={ref}
+      >
+        {cards.map((card) => {
+          return (
+            <Card
+              key={card.id}
+              id={card.id}
+              img={card.img}
+              name={card.name}
+              role={card.role}
+              company={card.company}
+              desc={card.desc}
+              setActiveCard={setActiveCard}
+              activeCard={activeCard}
+            />
+          );
+        })}
+      </motion.div>
     </div>
-
   );
 }
 
