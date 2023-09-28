@@ -28,6 +28,10 @@ import cryptoGetStarted2 from "../../../assets/images/2-crypto.svg";
 import cryptoGetStarted3 from "../../../assets/images/3-crypto.svg";
 import character2 from "../../../assets/images/character2.png";
 import laptop from "../../../assets/images/laptop.png";
+import appleIcon from "../../../assets/images/appleIcon.svg";
+import playstoreIcon from "../../../assets/images/playstoreIcon.svg";
+import fulliphone from "../../../assets/images/fulliphone.svg";
+import android from "../../../assets/images/android.svg";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -424,6 +428,32 @@ function Content() {
         
         <Button type="transparent" width="w-fit" >view all articles</Button>
       </div>
+
+      {/* app download */}
+      <div className="mt-10 md:mt-[170px] max-w-container w-full px-4 md:px-0 flex flex-col items-center space-y-4 md:space-y-12 mb-20">
+        <div className="flex flex-col justify-between md:flex-row w-full">
+          <h1 className="h2-desktop">Browse our latest news</h1>
+          <p className="paragraph max-w-[460px] w-full">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non
+            neque orci amet, amet .
+          </p>
+        </div>
+        <div className="mt-6 md:mt-10 md:space-x-[72px] flex flex-col md:flex-row space-y-4 md:space-y-0">
+          <div className="bg-dark-blue rounded-[40px] px-8 pt-8 md:px-12 md:pt-12 md:h-[775px] h-[580px] relative overflow-hidden flex flex-col ">
+            <h2 className="md:h2-desktop h2-mobile " >Download for iOS</h2>
+            <p className="paragraph mt-4 md:mb-8 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis.</p>
+            <Button width="w-fit py-4" > <img src={appleIcon} alt="" /> <p className="mt-1 ml-2" >App store</p></Button>
+            <img className=" scale-90 md:scale-100 self-center" src={fulliphone} alt="" />
+          </div>
+          <div className="bg-dark-blue rounded-[40px] px-8 pt-8 md:px-12 md:pt-12 md:h-[775px] h-[580px] relative overflow-hidden flex flex-col ">
+            <h2 className="md:h2-desktop h2-mobile" >Download for Android</h2>
+            <p className="paragraph mt-4 md:mb-8 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nulla integer in pellentesque tortor semper elementum. Felis.</p>
+            <Button width="w-fit py-4" > <img src={playstoreIcon} alt="" /> <p className="mt-1 ml-2" >App store</p></Button>
+            <img className=" scale-90 md:scale-100 self-center" src={android} alt="" />
+          </div>
+          
+        </div>
+      </div>
     </div>
   );
 }
@@ -535,7 +565,7 @@ function MyCarousel({ cards }) {
 
 function BlogPosts({ postsData }) {
   return (
-    <div className="flex flex-col md:flex-row md:space-x-[26px] space-y-4 ">
+    <div className="flex flex-col md:flex-row md:space-x-[26px] space-y-4 md:space-y-0 ">
       {postsData.map(
         ({ id, img, cate, title, desc, author, date, authorImg }) => {
           return (
