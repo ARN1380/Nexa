@@ -15,4 +15,19 @@
   .small-card {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
   }
+  .h1-desktop {
+    @apply text-[66px] font-bold leading-[80px] tracking-wide ;
+  }
+  .h1-mobile {
+    @apply text-[38px] font-semibold leading-[46px]  ;
+  }
+  .h2-desktop {
+    @apply text-[42px] font-bold leading-[55px];
+  }
+  .h2-mobile {
+    @apply text-[28px] font-semibold leading-9;
+  }
+  .paragraph {
+    @apply font-light text-lg leading-8;
+  }
 }

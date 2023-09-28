@@ -23,9 +23,13 @@ import earn5 from "../../../assets/images/earndaily/earn5.svg";
 import earn6 from "../../../assets/images/earndaily/earn6.svg";
 import exploreIphone from "../../../assets/images/exploreIphone.svg";
 import character from "../../../assets/images/character.png";
+import cryptoGetStarted1 from "../../../assets/images/1-crypto.svg";
+import cryptoGetStarted2 from "../../../assets/images/2-crypto.svg";
+import cryptoGetStarted3 from "../../../assets/images/3-crypto.svg";
+import character2 from "../../../assets/images/character2.png";
+import laptop from "../../../assets/images/laptop.png";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
 
 const cardData = [
   {
@@ -94,10 +98,41 @@ const cardData = [
   },
 ];
 
+const postsData = [
+  {
+    id: 0,
+    img: { laptop },
+    cate: "products",
+    title: "The Basics about Cryptocurrency",
+    desc: "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+    author: "alex turner",
+    date: "August 2, 2021",
+    authorImg: { character2 },
+  },
+  {
+    id: 1,
+    img: { laptop },
+    cate: "products",
+    title: "The Basics about Cryptocurrency",
+    desc: "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+    author: "alex turner",
+    date: "August 2, 2021",
+    authorImg: { character2 },
+  },
+  {
+    id: 2,
+    img: { laptop },
+    cate: "products",
+    title: "The Basics about Cryptocurrency",
+    desc: "Lorem ipsum dolor sit ametero irseo, consectetur adipiscing elit. Scelerisque viverra donec diammeo.",
+    author: "alex turner",
+    date: "August 2, 2021",
+    authorImg: { character2 },
+  },
+];
+
 export default function Landing() {
   return (
-    
-      
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
         <BgCircle />
@@ -106,7 +141,6 @@ export default function Landing() {
         <Footer />
       </div>
     </div>
-    
   );
 }
 
@@ -324,9 +358,11 @@ function Content() {
       </div>
 
       {/* comments crousel */}
-      <div className="w-full mt-48 flex flex-col items-center">
+      <div className="w-full px-4 md:px-0 mt-48 flex flex-col items-center">
         <div className="w-full max-w-container flex flex-col md:flex-row justify-between">
-          <p className="text-[42px] font-bold">What our users say?</p>
+          <p className="text-[28px] md:text-[42px] mb-[22px] font-bold">
+            What our users say?
+          </p>
           <Button>download app</Button>
         </div>
 
@@ -337,37 +373,56 @@ function Content() {
       </div>
 
       {/* video section */}
-      <div className="mt-40 flex flex-col md:flex-row max-w-container w-full">
+      <div className="mt-40 flex flex-col md:space-x-16 md:flex-row max-w-container w-full px-4 md:px-0">
         <div>
-          <h4 className="text-[28px] font-bold">Get started today</h4>
-          <p className="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla suspendisse tortor aene.</p>
-          <div className="flex flex-col space-y-[17px] md:pt-10">
+          <h4 className="text-[28px] md:text-[42px] font-bold">
+            Get started today
+          </h4>
+          <p className="mt-6 text-lg font-extralight ">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat
+            nulla suspendisse tortor aene.
+          </p>
+          <div className="flex flex-col space-y-[17px] font-extralight md:pt-10">
             <div className="flex space-x-[17px] items-center">
               <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
-                <img src={earn4} alt="earndaily icon" />
+                <img src={cryptoGetStarted1} alt="earndaily icon" />
               </div>
               <p>Lowest fees in market</p>
             </div>
             <div className="flex space-x-[17px] items-center">
               <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
-                <img src={earn5} alt="earndaily icon" />
+                <img src={cryptoGetStarted2} alt="earndaily icon" />
               </div>
               <p>Fast and secure transactions</p>
             </div>
             <div className="flex space-x-[17px] items-center">
               <div className="bg-blue rounded-[13px] w-[46px] h-[46px] flex justify-center items-center">
-                <img src={earn6} alt="earndaily icon" />
+                <img src={cryptoGetStarted3} alt="earndaily icon" />
               </div>
               <p>256-bit secure encryption</p>
-            </div>            
+            </div>
           </div>
         </div>
-        <div className="max-w-[60%] w-full">
+        <div className="md:max-w-[60%] mt-10 md:m-0 w-full h-[400px] ">
           <div className="bg-dark-blue w-full h-full rounded-[40px] flex justify-center items-center ">
-          {/* <video src="" className="w-full "></video> */}
-            <Button type='play'></Button>
+            {/* <video src="" className="w-full "></video> */}
+            <Button type="play"></Button>
           </div>
         </div>
+      </div>
+
+      {/* Blog section */}
+      <div className="mt-10 md:mt-[170px] max-w-container w-full px-4 md:px-0 flex flex-col items-center space-y-4 md:space-y-12">
+        <div className="flex flex-col justify-between md:flex-row w-full">
+          <h1 className="h2-desktop">Browse our latest news</h1>
+          <p className="paragraph max-w-[460px] w-full">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit non
+            neque orci amet, amet .
+          </p>
+        </div>
+        <BlogPosts postsData={postsData} /> 
+        
+        <Button type="transparent" width="w-fit" >view all articles</Button>
       </div>
     </div>
   );
@@ -441,6 +496,7 @@ function MyCarousel({ cards }) {
   const [activeCard, setActiveCard] = useState(
     Math.ceil(cards.length / 2 - 1).toString()
   );
+
   const [scrollWidth, setScrollWidth] = useState();
 
   const ref = useRef();
@@ -477,6 +533,58 @@ function MyCarousel({ cards }) {
   );
 }
 
+function BlogPosts({ postsData }) {
+  return (
+    <div className="flex flex-col md:flex-row md:space-x-[26px] space-y-4 ">
+      {postsData.map(
+        ({ id, img, cate, title, desc, author, date, authorImg }) => {
+          return (
+            <Post key={id}
+              id={id}
+              img={img}
+              cate={cate}
+              title={title}
+              desc={desc}
+              author={author}
+              date={date}
+              authorImg={authorImg}
+            />
+          );
+        }
+      )}
+    </div>
+  );
+}
+
+function Post({ id, img, cate, title, desc, author, date, authorImg }) {
+  return (
+    <div className="bg-dark-blue rounded-[40px] overflow-hidden">
+      <div className="">        
+        <img className="w-full" src={img.laptop} alt={title} />
+      </div>
+      <div className="px-[23px]">
+        <div className="bg-blue rounded-full py-[9px] px-[15px] w-fit -translate-y-5 m">
+          <p className="uppercase tracking-widest text-sm ">{cate}</p>
+        </div>
+        <h2 className="text-[22px] font-semibold">
+          {title}
+        </h2>
+        <p className="paragraph mt-4">
+          {desc}
+        </p>
+        <div className="border-b border-b-white/10  mt-[39px]"></div>
+        <div className="mt-[23px] mb-[34px] flex items-center space-x-[15px]">
+          <img src={authorImg.character2} className="rounded-full w-[60px] h-[60px]" alt="" />
+          <div>
+            <p className="uppercase">{author}</p>
+            <p className="uppercase mt-[2px]">{date}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BgCircle() {
   return (
     <>
@@ -489,9 +597,3 @@ function BgCircle() {
     </>
   );
 }
-
-// card --> isActive: false
-// card --> isActive: false --> isActive: true --> isActive: false
-// card --> isActive: false ---------------------> isActive: true
-// card --> isActive: false
-// card --> isActive: false

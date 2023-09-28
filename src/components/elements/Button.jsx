@@ -4,7 +4,7 @@ export default function Button(props) {
   if (type === "play") {
     return (
       <div className="rounded-full w-[100px] h-[100px] bg-white/20 flex justify-center items-center">
-        <div className="h-[28px] w-[25px] bg-white "></div>
+        <div className="h-0 w-0  border-t-[16px] border-l-[24px] border-b-[16px] border-transparent border-l-white translate-x-1 "></div>
       </div>
     );
   } else {
