@@ -10,6 +10,7 @@ export default function Header() {
             <img src={logo} alt="" />
             <h1>FinanceFlow</h1>
           </div>
+          <div className="h-[66px] border-l border-l-dark-blue"></div>
           <nav className="text-sm text-white uppercase hidden md:block">
             <ul className="flex space-x-7">
               <li>home</li>

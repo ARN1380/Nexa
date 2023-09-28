@@ -1,6 +1,6 @@
 import Header from "../../Header/Header";
 import Button from "./../../elements/Button";
-import Footer from "./../../footer/Footer";
+
 import macSvg from "../../../assets/images/mac.svg";
 import brightCircle from "../../../assets/images/brighter-circle.svg";
 import darkCircle from "../../../assets/images/darker-circle.svg";
@@ -34,6 +34,7 @@ import fulliphone from "../../../assets/images/fulliphone.svg";
 import android from "../../../assets/images/android.svg";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Footer from "../../footer/Footer";
 
 const cardData = [
   {
