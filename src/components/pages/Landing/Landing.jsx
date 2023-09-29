@@ -1,9 +1,9 @@
-import Header from "../../Header/Header";
 import Button from "./../../elements/Button";
-
 import macSvg from "../../../assets/images/mac.svg";
 import brightCircle from "../../../assets/images/brighter-circle.svg";
 import darkCircle from "../../../assets/images/darker-circle.svg";
+import circle3 from "../../../assets/images/circle3.svg";
+import circle4 from "../../../assets/images/circle4.svg";
 import comp1 from "../../../assets/images/comp1.svg";
 import comp2 from "../../../assets/images/comp2.svg";
 import comp3 from "../../../assets/images/comp3.svg";
@@ -141,9 +141,9 @@ export default function Landing() {
     <div className="bg-bg overflow-hidden flex justify-center text-white">
       <div className=" relative max-w-[1920px]">
         <BgCircle />
-        <Header />
+        {/* <Header /> */}
         <Content />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
@@ -153,9 +153,9 @@ function Content() {
   return (
     <div className="flex flex-col items-center ">
       {/* hero section */}
-      <div className="flex relative overflow-x-hiddenn ">
+      <div className="flex relative overflow-x-hidden ">
         <div className="flex justify-center w-screen px-4">
-          <div className="max-w-container w-full pt-20 flex flex-col md:flex-row items-center md:h-[660px] ">
+          <div className="max-w-container w-full md:pt-20 pt-10 flex flex-col md:flex-row items-center md:h-[660px] ">
             <div className="max-w-[738px] z-20">
               <h1 className="font-bold text-[38px] md:text-[66px] leading-tight ">
                 Buy, trade, and hold 350+ cryptocurrencies
@@ -266,8 +266,8 @@ function Content() {
         </div>
       </div>
       {/* Earn daily iphone */}
-      <div className="px-4 mt-20 w-full flex flex-col max-w-container space-y-10 md:flex-row md:space-x-[167px] md:justify-center md:items-center">
-        <div className="self-center">
+      <div className="px-4 mt-20 w-full flex flex-col max-w-container space-y-10 md:flex-row md:space-x-[167px] md:justify-center md:items-center z-10">
+        <div className="self-center ">
           <img className="" src={iphones} alt="iphones" />
         </div>
         <div className="flex flex-col space-y-4 pr-11 md:max-w-[475px] ">
@@ -301,7 +301,7 @@ function Content() {
         </div>
       </div>
       {/* Earn daily mac */}
-      <div className="flex flex-col space-y-10  md:flex-row mt-20 md:mt-[100px] px-4 md:px-0 justify-start max-w-container w- items-center md:h-[600px]">
+      <div className="flex flex-col space-y-10  md:flex-row mt-20 md:mt-[100px] px-4 md:px-0 justify-start max-w-container w- items-center md:h-[600px] z-10">
         <div className="flex flex-col space-y-4 md:max-w-[475px] md:ml-10 ">
           <h3 className="capitalize font-bold text-[28px] leading-9 md:text-[42px] md:leading-[55px]">
             Earn daily rewards on your idle tokens
@@ -363,7 +363,7 @@ function Content() {
       </div>
 
       {/* comments crousel */}
-      <div className="w-full px-4 md:px-0 mt-48 flex flex-col items-center">
+      <div className="w-full px-4 md:px-0 mt-48 flex flex-col items-center z-10">
         <div className="w-full max-w-container flex flex-col md:flex-row justify-between">
           <p className="text-[28px] md:text-[42px] mb-[22px] font-bold">
             What our users say?
@@ -619,11 +619,17 @@ function Post({ id, img, cate, title, desc, author, date, authorImg }) {
 function BgCircle() {
   return (
     <>
-      <div className="md:w-[1145px] md:h-[1145px] w-[800px] h-[800px] absolute md:-top-[420px] md:-left-[30%] top-[200px] -right-[280px] ">
+      <div className="md:w-[1145px] md:h-[1145px] w-[800px] h-[800px] absolute md:top-[320px] md:-left-[30%] top-[200px] -right-[280px]">
         <img className="md:opacity-40 opacity-60" src={darkCircle} alt="" />
       </div>
-      <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[270px] md:left-[52%] top-[1300px] -right-[200px]">
+      <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[0px] md:left-[45%] top-[1300px] -right-[200px]">
         <img className="opacity-80 md:opacity-100" src={brightCircle} alt="" />
+      </div>
+      <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[1000px] md:left-[50%] top-[3100px] -right-[200px]">
+        <img className="opacity-80 md:opacity-100" src={circle3} alt="" />
+      </div>
+      <div className="md:w-[874px] md:h-[874px] w-[1000px] h-[1000px] absolute md:top-[2300px] md:left-[25%] top-[5600px] -right-[200px]">
+        <img className="opacity-80 md:opacity-100" src={circle4} alt="" />
       </div>
     </>
   );

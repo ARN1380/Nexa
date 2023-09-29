@@ -1,22 +1,23 @@
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
+import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from "react-router-dom"
 import Landing from "./components/pages/Landing/Landing"
 import Dashboard from './components/pages/user/Dashboard';
+import MainLayout from './Layouts/MainLayout';
 
 
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    
-    <Route path="/" element={<Landing />}>
-      <Route path="dashboard" element={<Dashboard />} />
-    </Route>
-  )
-)
+
 
 function App() {
   return (
-    
-    <RouterProvider router={router}></RouterProvider>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Landing />} />
+          <Route path="dashboard" element={<Dashboard />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
