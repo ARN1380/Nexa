@@ -182,7 +182,7 @@ function Content() {
         </div>
       </div>
       {/* company section */}
-      <div className="mt-20 md:mt-[170px] flex flex-col items-center max-w-container w-full">
+      <div className="mt-20 md:mt-[170px] flex flex-col items-center max-w-container w-full z-10">
         <p className="text-lg font-light">Finance flow has been featured on</p>
         <div className="grid grid-cols-2 gap-x-10 gap-y-4 mt-6 md:grid-cols-5 px-10 md:px-0 justify-items-center">
           <div className="flex space-x-[10px] items-center">
