@@ -11,11 +11,16 @@ import comp2 from "../../../assets/images/comp2.svg";
 import comp3 from "../../../assets/images/comp3.svg";
 import comp4 from "../../../assets/images/comp4.svg";
 import comp5 from "../../../assets/images/comp5.svg";
+import circle from "../../../assets/images/about/circle.svg";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center bg-bg text-white overflow-hidden">
-      <div className="px-4 md:px-0 flex flex-col md:items-center mt-12 md:mt-16 space-y-4 md:space-y-6">
+    <div className="flex flex-col items-center bg-bg text-white overflow-hidden relative">
+      <div className="z-10 absolute -top-10 -left-80">
+        <img src={circle} alt="circle" />
+      </div>
+      {/* hero */}
+      <div className="px-4 md:px-0 flex flex-col md:items-center mt-12 md:mt-16 space-y-4 md:space-y-6 z-20">
         <h1 className="h1">About Finance Flow</h1>
         <p className="md:w-[606px] md:text-center md:paragraph mobile-paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
@@ -23,7 +28,8 @@ export default function About() {
           dolor non aliquam. Malesuada.
         </p>
       </div>
-      <div className="mt-12 md:mt-28 px-4 md:px-0 grid md:grid-cols-2 grid-cols-1 max-w-container gap-7 w-full">
+      {/* What drives Finance Flow? */}
+      <div className="mt-12 md:mt-28 px-4 md:px-0 grid md:grid-cols-2 grid-cols-1 max-w-container gap-7 w-full z-20">
         <h2 className="h2">What drives Finance Flow?</h2>
         <p className="md:w-[496px] justify-self-end">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
@@ -78,6 +84,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      {/* Our mission */}
       <div className="mt-[14.5rem] px-4 md:px-0 max-w-container w-full flex flex-col md:flex-row relative">
         <div className="max-w-[607px] w-full shrink-0">
           <div className="">
@@ -115,8 +122,13 @@ export default function About() {
             </p>
           </div>
         </div>
-        <img src={planet} className="md:absolute mt-20 md:mt-0 -right-44 top-0" alt="" />
+        <img
+          src={planet}
+          className="md:absolute mt-20 md:mt-0 -right-44 top-0"
+          alt=""
+        />
       </div>
+      {/* Timeline */}
       <div className="mt-[179px] flex flex-col md:flex-row md:space-x-[120px] space-y-10 md:space-y-0 max-w-container w-full md:px-0 px-4">
         <div className="w-[382px] shrink-0">
           <h2 className="h2">Timeline</h2>
@@ -131,41 +143,61 @@ export default function About() {
           <div className="flex space-x-[54px] border-b border-b-white pb-10">
             <div className="rounded-full bg-white w-6 h-6 shrink-0"></div>
             <div>
-            <span className="text-[28px] font-bold">2014</span>
-            <p className="mt-6 text-lg font-bold">Announcement</p>
-            <p className="mt-3 paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+              <span className="text-[28px] font-bold">2014</span>
+              <p className="mt-6 text-lg font-bold">Announcement</p>
+              <p className="mt-3 paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                mattis vivamus at mattis bibendum congue cras id interdum. Risus
+                leo et.
+              </p>
             </div>
           </div>
           <div className="flex space-x-[54px] border-b border-b-white pb-10">
             <div className="rounded-full bg-white w-6 h-6 shrink-0"></div>
             <div>
-            <span className="text-[28px] font-bold">2016</span>
-            <p className="mt-6 text-lg font-bold">Announcement</p>
-            <p className="mt-3 paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+              <span className="text-[28px] font-bold">2016</span>
+              <p className="mt-6 text-lg font-bold">Announcement</p>
+              <p className="mt-3 paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                mattis vivamus at mattis bibendum congue cras id interdum. Risus
+                leo et.
+              </p>
             </div>
           </div>
           <div className="flex space-x-[54px] border-b border-b-white pb-10">
             <div className="rounded-full bg-white w-6 h-6 shrink-0"></div>
             <div>
-            <span className="text-[28px] font-bold">2018</span>
-            <p className="mt-6 text-lg font-bold">Announcement</p>
-            <p className="mt-3 paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+              <span className="text-[28px] font-bold">2018</span>
+              <p className="mt-6 text-lg font-bold">Announcement</p>
+              <p className="mt-3 paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                mattis vivamus at mattis bibendum congue cras id interdum. Risus
+                leo et.
+              </p>
             </div>
           </div>
           <div className="flex space-x-[54px] border-b border-b-white pb-10">
             <div className="rounded-full bg-white w-6 h-6 shrink-0"></div>
             <div>
-            <span className="text-[28px] font-bold">2022</span>
-            <p className="mt-6 text-lg font-bold">Announcement</p>
-            <p className="mt-3 paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vivamus at mattis bibendum congue cras id interdum. Risus leo et.</p>
+              <span className="text-[28px] font-bold">2022</span>
+              <p className="mt-6 text-lg font-bold">Announcement</p>
+              <p className="mt-3 paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                mattis vivamus at mattis bibendum congue cras id interdum. Risus
+                leo et.
+              </p>
             </div>
           </div>
         </div>
       </div>
+      {/* Our team */}
       <div className="mt-20 max-w-container w-full md:px-0 px-4">
         <div className="flex flex-col md:flex-row md:justify-between items-center md:space-y-0 space-y-4">
           <h2 className="h2 self-start">Our Team</h2>
-          <p className="paragraph w-full max-w-[496px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem purus justo, ultricies.</p>
+          <p className="paragraph w-full max-w-[496px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient
+            lorem purus justo, ultricies.
+          </p>
         </div>
         <div className="mt-[50px] flex flex-col md:flex-row md:space-x-[38px] space-y-4 md:space-y-0">
           <div className="bg-dark-blue rounded-[40px] p-6 uppercase tracking-[1px]">
@@ -185,10 +217,14 @@ export default function About() {
           </div>
         </div>
       </div>
+      {/* investors */}
       <div className="mt-20 md:mt-[170px] flex flex-col items-center max-w-container w-full z-10 md:mb-[230px] mb-20">
         <div className="text-center w-full max-w-[496px]">
           <h2 className="h2">Investors</h2>
-          <p className="paragraph mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient lorem purus justo, ultricies.</p>
+          <p className="paragraph mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Parturient
+            lorem purus justo, ultricies.
+          </p>
         </div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-4 mt-6 md:grid-cols-5 px-10 md:px-0 justify-items-center">
           <div className="flex space-x-[10px] items-center">
