@@ -1,17 +1,17 @@
-import peopleIcon from "../../../assets/images/about/icon1.svg";
-import worldwideIcon from "../../../assets/images/about/icon2.svg";
-import magnifireIcon from "../../../assets/images/about/icon3.svg";
-import compassIcon from "../../../assets/images/about/icon4.svg";
-import planet from "../../../assets/images/about/planet.svg";
-import person1 from "../../../assets/images/about/Rectangle2.png";
-import person2 from "../../../assets/images/about/Rectangle2-1.png";
-import person3 from "../../../assets/images/about/Rectangle2-2.png";
-import comp1 from "../../../assets/images/comp1.svg";
-import comp2 from "../../../assets/images/comp2.svg";
-import comp3 from "../../../assets/images/comp3.svg";
-import comp4 from "../../../assets/images/comp4.svg";
-import comp5 from "../../../assets/images/comp5.svg";
-import circle from "../../../assets/images/about/circle.svg";
+import peopleIcon from "../../assets/images/about/icon1.svg";
+import worldwideIcon from "../../assets/images/about/icon2.svg";
+import magnifireIcon from "../../assets/images/about/icon3.svg";
+import compassIcon from "../../assets/images/about/icon4.svg";
+import planet from "../../assets/images/about/planet.svg";
+import person1 from "../../assets/images/about/Rectangle2.png";
+import person2 from "../../assets/images/about/Rectangle2-1.png";
+import person3 from "../../assets/images/about/Rectangle2-2.png";
+import comp1 from "../../assets/images/comp1.svg";
+import comp2 from "../../assets/images/comp2.svg";
+import comp3 from "../../assets/images/comp3.svg";
+import comp4 from "../../assets/images/comp4.svg";
+import comp5 from "../../assets/images/comp5.svg";
+import circle from "../../assets/images/about/circle.svg";
 
 export default function About() {
   return (
