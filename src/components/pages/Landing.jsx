@@ -462,7 +462,7 @@ function Content() {
 function SmallCard({ svg, title, desc }) {
   return (
     <div className="bg-dark-blue py-12 px-6 flex flex-col rounded-[40px]">
-      <div className="w-16 h-16 p-3 bg-blue rounded-3xl">
+      <div className="w-16 h-16 p-3 bg-blue rounded-3xl flex justify-center items-center">
         <img src={svg} alt="" />
       </div>
       <h4 className="mt-5 font-semibold text-lg uppercase">{title}</h4>
