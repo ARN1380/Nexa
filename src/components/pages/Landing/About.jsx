@@ -31,7 +31,7 @@ export default function About() {
       {/* What drives Finance Flow? */}
       <div className="mt-12 md:mt-28 px-4 md:px-0 grid md:grid-cols-2 grid-cols-1 max-w-container gap-7 w-full z-20">
         <h2 className="h2">What drives Finance Flow?</h2>
-        <p className="md:w-[496px] justify-self-end">
+        <p className="md:max-w-[496px] w-full justify-self-end self-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat nulla
           suspendisse tortor aene.
         </p>
@@ -122,11 +122,7 @@ export default function About() {
             </p>
           </div>
         </div>
-        <img
-          src={planet}
-          className="md:absolute mt-20 md:mt-0 -right-44 top-0"
-          alt=""
-        />
+        <img src={planet} className="md:absolute mt-20 md:mt-0 -right-44 top-0"/>
       </div>
       {/* Timeline */}
       <div className="mt-[179px] flex flex-col md:flex-row md:space-x-[120px] space-y-10 md:space-y-0 max-w-container w-full md:px-0 px-4">
@@ -180,7 +176,10 @@ export default function About() {
             <div className="rounded-full bg-white w-6 h-6 shrink-0"></div>
             <div>
               <span className="text-[28px] font-bold">2022</span>
-              <p className="mt-6 text-lg font-bold">Announcement</p>
+              <p className="mt-6 text-lg font-bold">
+                Announcement
+              </p>
+              
               <p className="mt-3 paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 mattis vivamus at mattis bibendum congue cras id interdum. Risus
