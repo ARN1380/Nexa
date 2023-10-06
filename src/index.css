@@ -24,4 +24,11 @@
   .paragraph {
     @apply md:font-light md:text-lg md:leading-8 font-light leading-7;
   }  
+  
+}
+.active {
+  
+  border-color: white;
+  border-bottom-width: 1px;
+  border-style: solid;
 }

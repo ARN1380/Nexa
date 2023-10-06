@@ -1,6 +1,7 @@
 import Button from "../elements/Button";
 import logo from "../../assets/images/logo.svg";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +17,25 @@ export default function Header() {
           <div className=" h-[66px] border-l border-l-dark-blue"></div>
           {/* desktop menu */}
           <nav className="text-sm text-white uppercase ">
-            <ul className="flex space-x-7">
-              <li>home</li>
-              <li>about</li>
-              <li>pricing</li>
-              <li>tokens</li>
-              <li>blog</li>
-              <li>contact us</li>
+            <ul className="flex space-x-7  [&>*]:cursor-pointer tracking-widest">
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="/">home</NavLink>
+              </li>
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="about">about</NavLink>
+              </li>
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="pricing">pricing</NavLink>
+              </li>
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="tokens">tokens</NavLink>
+              </li>
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="blog">blog</NavLink>
+              </li>
+              <li onClick={()=>setIsOpen((is)=>!is)}>
+                <NavLink to="contact-us">Contact us</NavLink>
+              </li>
             </ul>
           </nav>
         </div>
@@ -41,7 +54,7 @@ export default function Header() {
             <img src={logo} alt="" />
             <h1>FinanceFlow</h1>
           </div>
-          <button onClick={() => setIsOpen((is)=>!is) }>
+          <button onClick={() => setIsOpen((is) => !is)}>
             <ul className="bg-blue rounded-full w-[45px] h-[45px] flex flex-col items-center justify-center">
               <li
                 className={`border bg-white border-white w-6 ease-out duration-500 ${
@@ -62,14 +75,30 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className={` ease-in duration-200  ${isOpen ? "delay-100" : "opacity-0"}`}>
-          <ul className="flex flex-col items-center space-y-5 text-white uppercase text-[32px] font-bold absolute top-1/2 -translate-y-[47%] left-1/2 -translate-x-1/2">
-            <li>home</li>
-            <li>about</li>
-            <li>pricing</li>
-            <li>tokens</li>
-            <li>blog</li>
-            <li>contact us</li>
+        <nav
+          className={` ease-in duration-200  ${
+            isOpen ? "delay-100" : "opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col items-center space-y-5 text-white uppercase text-[32px] font-bold absolute top-1/2 -translate-y-[47%] left-1/2 -translate-x-1/2 [&>*]:cursor-pointer">
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="/" >home</NavLink>
+            </li>
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="about">about</NavLink>
+            </li>
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="pricing">pricing</NavLink>
+            </li>
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="tokens">tokens</NavLink>
+            </li>
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="blog">blog</NavLink>
+            </li>
+            <li onClick={()=>setIsOpen((is)=>!is)}>
+              <NavLink to="contact-us">Contact us</NavLink>
+            </li>
             <Button width="w-[300px]">download app</Button>
           </ul>
         </nav>
