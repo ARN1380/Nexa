@@ -25,21 +25,6 @@ modern design, and sections tailored for showcasing a crypto trading and portfol
 
 ---
 
-## 📂 Folder Structure
-NexaCrypto/
-│── public/ # Static assets (images, icons)
-│── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Next.js pages (Home, Blog, etc.)
-│ ├── styles/ # Tailwind and global styles
-│ └── utils/ # Helper functions (if any)
-│
-│── package.json
-│── tailwind.config.js
-│── next.config.js
-│── README.md
-
----
 
 🖥️ Tech Stack
 
